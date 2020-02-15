@@ -4,11 +4,14 @@
  * and open the template in the editor.
  */
 package com.ciudadInflable.frame;
+
 import com.ciudadInflable.fonts.Fuente;
+import com.sistema.entidad.Usuario;
+import com.sistema.logica.UsuarioLog;
+import com.sistema.servicio.ServicioUsuario;
 import java.awt.event.MouseEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 
 /**
  *
@@ -19,14 +22,15 @@ public class Login extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
-	 Fuente tipoFuente;
+    Fuente tipoFuente;
+
     public Login() {
         tipoFuente = new Fuente();
         initComponents();
         this.setLocationRelativeTo(null); //hace que cuando se ejecuta el programa salga en el centro
         jLabel4.setFont(tipoFuente.fuente(tipoFuente.decker, 0, 18));
         jLabel3.setFont(tipoFuente.fuente(tipoFuente.decker, 0, 18));
-        jTextField1.setFont(tipoFuente.fuente(tipoFuente.decker, 0, 18));
+        txtUserName.setFont(tipoFuente.fuente(tipoFuente.decker, 0, 18));
     }
 
     /**
@@ -43,10 +47,10 @@ public class Login extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtUserName = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        txtPassword = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -96,21 +100,21 @@ public class Login extends javax.swing.JFrame {
         });
         jpIngreso.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 190, 170));
 
-        jTextField1.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField1.setText("Ingrese el usuario...");
-        jTextField1.setToolTipText("");
-        jTextField1.setBorder(null);
-        jTextField1.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtUserName.setForeground(new java.awt.Color(153, 153, 153));
+        txtUserName.setText("Ingrese el usuario...");
+        txtUserName.setToolTipText("");
+        txtUserName.setBorder(null);
+        txtUserName.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTextField1MouseClicked(evt);
+                txtUserNameMouseClicked(evt);
             }
         });
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtUserName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtUserNameActionPerformed(evt);
             }
         });
-        jpIngreso.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 160, 30));
+        jpIngreso.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 160, 30));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
@@ -120,42 +124,42 @@ public class Login extends javax.swing.JFrame {
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
         jpIngreso.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 210, 30));
 
-        jPasswordField1.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
-        jPasswordField1.setForeground(new java.awt.Color(153, 153, 153));
-        jPasswordField1.setText("password123456");
-        jPasswordField1.setToolTipText("");
-        jPasswordField1.setBorder(null);
-        jPasswordField1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPasswordField1.setDisabledTextColor(new java.awt.Color(153, 153, 153));
-        jPasswordField1.addFocusListener(new java.awt.event.FocusAdapter() {
+        txtPassword.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        txtPassword.setForeground(new java.awt.Color(153, 153, 153));
+        txtPassword.setText("password123456");
+        txtPassword.setToolTipText("");
+        txtPassword.setBorder(null);
+        txtPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtPassword.setDisabledTextColor(new java.awt.Color(153, 153, 153));
+        txtPassword.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                jPasswordField1FocusGained(evt);
+                txtPasswordFocusGained(evt);
             }
         });
-        jPasswordField1.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPasswordField1MouseClicked(evt);
+                txtPasswordMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jPasswordField1MouseEntered(evt);
+                txtPasswordMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jPasswordField1MouseExited(evt);
+                txtPasswordMouseExited(evt);
             }
         });
-        jPasswordField1.addInputMethodListener(new java.awt.event.InputMethodListener() {
+        txtPassword.addInputMethodListener(new java.awt.event.InputMethodListener() {
             public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
             }
             public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
-                jPasswordField1InputMethodTextChanged(evt);
+                txtPasswordInputMethodTextChanged(evt);
             }
         });
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        txtPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                txtPasswordActionPerformed(evt);
             }
         });
-        jpIngreso.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 170, 30));
+        jpIngreso.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 170, 30));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -208,6 +212,11 @@ public class Login extends javax.swing.JFrame {
         jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/Enter_ON.png"))); // NOI18N
         jButton1.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/Enter_ON.png"))); // NOI18N
         jButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/Enter_ON.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jpIngreso.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, 120, 40));
 
         getContentPane().add(jpIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 580));
@@ -255,38 +264,37 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_txtPasswordActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtUserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtUserNameActionPerformed
 
-    private void jPasswordField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField1FocusGained
+    private void txtPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPasswordFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1FocusGained
+    }//GEN-LAST:event_txtPasswordFocusGained
 
-    private void jPasswordField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPasswordField1MouseClicked
-        jPasswordField1.selectAll();
-    }//GEN-LAST:event_jPasswordField1MouseClicked
+    private void txtPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPasswordMouseClicked
+        txtPassword.selectAll();
+    }//GEN-LAST:event_txtPasswordMouseClicked
 
     private void jLabel5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MousePressed
-        
-            jPasswordField1.setEchoChar((char)0);
-            jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/icons8-show-password-30(1).png")));
-        
-           
-        
+
+        txtPassword.setEchoChar((char) 0);
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/icons8-show-password-30(1).png")));
+
+
     }//GEN-LAST:event_jLabel5MousePressed
 
     private void jLabel5MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseReleased
-        jPasswordField1.setEchoChar('●'); 
+        txtPassword.setEchoChar('●');
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/icons8-show-password-30(2).png")));
     }//GEN-LAST:event_jLabel5MouseReleased
 
     private void jLabel5FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel5FocusGained
-       
+
     }//GEN-LAST:event_jLabel5FocusGained
 
     private void jLabel5MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseMoved
@@ -294,33 +302,69 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel5MouseMoved
 
     private void jLabel5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseEntered
-         jLabel5.setToolTipText("Oprimir para mostrar la contraseña.");
+        jLabel5.setToolTipText("Oprimir para mostrar la contraseña.");
     }//GEN-LAST:event_jLabel5MouseEntered
 
-    private void jTextField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField1MouseClicked
-        jTextField1.selectAll();
-    }//GEN-LAST:event_jTextField1MouseClicked
+    private void txtUserNameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUserNameMouseClicked
+        txtUserName.selectAll();
+    }//GEN-LAST:event_txtUserNameMouseClicked
 
     private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
-       // jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/smilemonkey.gif")));
+        // jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/smilemonkey.gif")));
     }//GEN-LAST:event_jLabel2MouseEntered
 
     private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
-       // jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/monoMedioSonriendo.png")));
+        // jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/monoMedioSonriendo.png")));
     }//GEN-LAST:event_jLabel2MouseExited
 
-    private void jPasswordField1InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jPasswordField1InputMethodTextChanged
-        
-    }//GEN-LAST:event_jPasswordField1InputMethodTextChanged
+    private void txtPasswordInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_txtPasswordInputMethodTextChanged
 
-    private void jPasswordField1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPasswordField1MouseEntered
+    }//GEN-LAST:event_txtPasswordInputMethodTextChanged
+
+    private void txtPasswordMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPasswordMouseEntered
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/seenoevil.gif")));
-    }//GEN-LAST:event_jPasswordField1MouseEntered
+    }//GEN-LAST:event_txtPasswordMouseEntered
 
-    private void jPasswordField1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPasswordField1MouseExited
+    private void txtPasswordMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPasswordMouseExited
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/smilemonkey.gif")));
-    }//GEN-LAST:event_jPasswordField1MouseExited
+    }//GEN-LAST:event_txtPasswordMouseExited
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        Usuario usuario = new Usuario();
+
+        if (txtUserName.getText().equalsIgnoreCase("") || txtPassword.getText().equalsIgnoreCase("")) {
+            System.out.println("Debe llenar los campos");
+        } else {
+            usuario.setNombreUsuario(txtUserName.getText());
+            usuario.setContrasenna(txtPassword.getText());
+            
+            ServicioUsuario servicioUsuario = new ServicioUsuario();
+            
+            try {
+                
+                Usuario logeado = servicioUsuario.login(usuario);
+                
+                if (logeado != null) {
+                    
+                    SuperAdminWindow sU = new SuperAdminWindow();
+                    sU.setLocationRelativeTo(null);
+                    sU.setVisible(true);
+                    this.dispose();
+                    
+                }else{
+                    System.out.println("Algo sale mal");
+                }
+                
+                
+            } catch (Exception e) {
+            }
+            
+        }
+
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -369,10 +413,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel jpIngreso;
     private javax.swing.JLabel jpMenu1;
     private javax.swing.JLabel jpMenu2;
@@ -380,5 +422,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jpMenu4;
     private javax.swing.JLabel jpMenu5;
     private javax.swing.JLabel jpMenu6;
+    private javax.swing.JPasswordField txtPassword;
+    private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
 }
