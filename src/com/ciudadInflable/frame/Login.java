@@ -57,12 +57,7 @@ public class Login extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jpMenu1 = new javax.swing.JLabel();
-        jpMenu2 = new javax.swing.JLabel();
-        jpMenu3 = new javax.swing.JLabel();
-        jpMenu4 = new javax.swing.JLabel();
-        jpMenu5 = new javax.swing.JLabel();
-        jpMenu6 = new javax.swing.JLabel();
+        imageView1 = new com.ciudadInflable.animaciones.ImageView();
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -225,23 +220,22 @@ public class Login extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jpMenu1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(jpMenu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 190, 160));
+        imageView1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jpMenu2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(jpMenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, 190, 160));
+        javax.swing.GroupLayout imageView1Layout = new javax.swing.GroupLayout(imageView1);
+        imageView1.setLayout(imageView1Layout);
+        imageView1Layout.setHorizontalGroup(
+            imageView1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 150, Short.MAX_VALUE)
+        );
+        imageView1Layout.setVerticalGroup(
+            imageView1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 120, Short.MAX_VALUE)
+        );
 
-        jpMenu3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(jpMenu3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 190, 160));
-
-        jpMenu4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(jpMenu4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 320, 190, 160));
-
-        jpMenu5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(jpMenu5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 320, 190, 160));
-
-        jpMenu6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(jpMenu6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 190, 160));
+        jPanel1.add(imageView1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 150, 120));
+        imageView1.setImage(com.ciudadInflable.animaciones.ImageLoader.load("icons8-open-box-80.png"));
+        imageView1.setScale(.5);
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 760, 530));
 
@@ -402,6 +396,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.ciudadInflable.animaciones.ImageView imageView1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -416,12 +411,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JPanel jpIngreso;
-    private javax.swing.JLabel jpMenu1;
-    private javax.swing.JLabel jpMenu2;
-    private javax.swing.JLabel jpMenu3;
-    private javax.swing.JLabel jpMenu4;
-    private javax.swing.JLabel jpMenu5;
-    private javax.swing.JLabel jpMenu6;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
