@@ -6,15 +6,8 @@
 package com.ciudadInflable.frame;
 
 import com.ciudadInflable.fonts.Fuente;
-import com.sistema.entidad.Usuario;
-import com.sistema.servicio.ServicioUsuario;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.Timer;
 import rojerusan.RSPanelsSlider;
 
