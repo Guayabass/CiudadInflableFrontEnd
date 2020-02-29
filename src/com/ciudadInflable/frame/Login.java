@@ -47,12 +47,12 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        labelManejarEventos = new javax.swing.JLabel();
+        labelAnnadir = new javax.swing.JLabel();
+        labelVentaEntradas = new javax.swing.JLabel();
+        labelManejarEntradas = new javax.swing.JLabel();
+        labelAnnadirEventos = new javax.swing.JLabel();
+        labelInventario = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -89,110 +89,118 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/icons8-calendar-100 (1).png"))); // NOI18N
-        jLabel9.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        labelManejarEventos.setBackground(new java.awt.Color(255, 255, 255));
+        labelManejarEventos.setForeground(new java.awt.Color(255, 255, 255));
+        labelManejarEventos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelManejarEventos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/icons8-calendar-100 (1).png"))); // NOI18N
+        labelManejarEventos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jLabel9MouseMoved(evt);
+                labelManejarEventosMouseMoved(evt);
             }
         });
-        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+        labelManejarEventos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel9MouseExited(evt);
+                labelManejarEventosMouseExited(evt);
             }
         });
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 310, 180, 160));
+        jPanel1.add(labelManejarEventos, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 310, 180, 160));
 
-        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/icons8-open-box-100 (6).png"))); // NOI18N
-        jLabel11.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        labelAnnadir.setBackground(new java.awt.Color(255, 255, 255));
+        labelAnnadir.setForeground(new java.awt.Color(255, 255, 255));
+        labelAnnadir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelAnnadir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/icons8-open-box-100 (6).png"))); // NOI18N
+        labelAnnadir.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jLabel11MouseMoved(evt);
+                labelAnnadirMouseMoved(evt);
             }
         });
-        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+        labelAnnadir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel11MouseClicked(evt);
+                labelAnnadirMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                labelAnnadirMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel11MouseExited(evt);
+                labelAnnadirMouseExited(evt);
             }
         });
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 180, 150));
+        jPanel1.add(labelAnnadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 180, 150));
 
-        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/icons8-two-tickets-100 (2).png"))); // NOI18N
-        jLabel12.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        labelVentaEntradas.setBackground(new java.awt.Color(255, 255, 255));
+        labelVentaEntradas.setForeground(new java.awt.Color(255, 255, 255));
+        labelVentaEntradas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelVentaEntradas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/icons8-two-tickets-100 (2).png"))); // NOI18N
+        labelVentaEntradas.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jLabel12MouseMoved(evt);
+                labelVentaEntradasMouseMoved(evt);
             }
         });
-        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+        labelVentaEntradas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel12MouseExited(evt);
+                labelVentaEntradasMouseExited(evt);
             }
         });
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 60, 180, 160));
+        jPanel1.add(labelVentaEntradas, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 60, 180, 160));
 
-        jLabel13.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/icons8-two-tickets-100 (1).png"))); // NOI18N
-        jLabel13.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        labelManejarEntradas.setBackground(new java.awt.Color(255, 255, 255));
+        labelManejarEntradas.setForeground(new java.awt.Color(255, 255, 255));
+        labelManejarEntradas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelManejarEntradas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/icons8-two-tickets-100 (1).png"))); // NOI18N
+        labelManejarEntradas.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jLabel13MouseMoved(evt);
+                labelManejarEntradasMouseMoved(evt);
             }
         });
-        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+        labelManejarEntradas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel13MouseExited(evt);
+                labelManejarEntradasMouseExited(evt);
             }
         });
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 180, 160));
+        jPanel1.add(labelManejarEntradas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 180, 160));
 
-        jLabel14.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/icons8-calendar-100.png"))); // NOI18N
-        jLabel14.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        labelAnnadirEventos.setBackground(new java.awt.Color(255, 255, 255));
+        labelAnnadirEventos.setForeground(new java.awt.Color(255, 255, 255));
+        labelAnnadirEventos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelAnnadirEventos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/icons8-calendar-100.png"))); // NOI18N
+        labelAnnadirEventos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jLabel14MouseMoved(evt);
+                labelAnnadirEventosMouseMoved(evt);
             }
         });
-        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+        labelAnnadirEventos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel14MouseExited(evt);
+                labelAnnadirEventosMouseExited(evt);
             }
         });
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 310, 180, 160));
+        jPanel1.add(labelAnnadirEventos, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 310, 180, 160));
 
-        jLabel15.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/icons8-open-box-100 (5).png"))); // NOI18N
-        jLabel15.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        labelInventario.setBackground(new java.awt.Color(255, 255, 255));
+        labelInventario.setForeground(new java.awt.Color(255, 255, 255));
+        labelInventario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/icons8-open-box-100 (5).png"))); // NOI18N
+        labelInventario.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jLabel15MouseMoved(evt);
+                labelInventarioMouseMoved(evt);
             }
         });
-        jLabel15.addMouseListener(new java.awt.event.MouseAdapter() {
+        labelInventario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel15MouseExited(evt);
+                labelInventarioMouseExited(evt);
             }
         });
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 180, 160));
+        jPanel1.add(labelInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 180, 160));
 
         jLabel10.setBackground(new java.awt.Color(255, 99, 71));
         jLabel10.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
@@ -373,6 +381,12 @@ public class Login extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton1MouseEntered(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jButton1MouseReleased(evt);
+            }
         });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -466,57 +480,57 @@ public class Login extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jLabel21MouseClicked
 
-    private void jLabel11MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseMoved
-        jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-    }//GEN-LAST:event_jLabel11MouseMoved
+    private void labelAnnadirMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelAnnadirMouseMoved
+        labelAnnadir.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+    }//GEN-LAST:event_labelAnnadirMouseMoved
 
-    private void jLabel11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseExited
-        jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-    }//GEN-LAST:event_jLabel11MouseExited
+    private void labelAnnadirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelAnnadirMouseExited
+        labelAnnadir.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+    }//GEN-LAST:event_labelAnnadirMouseExited
 
-    private void jLabel15MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseExited
-        jLabel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-    }//GEN-LAST:event_jLabel15MouseExited
+    private void labelInventarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelInventarioMouseExited
+        labelInventario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+    }//GEN-LAST:event_labelInventarioMouseExited
 
-    private void jLabel15MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseMoved
-        jLabel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-    }//GEN-LAST:event_jLabel15MouseMoved
+    private void labelInventarioMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelInventarioMouseMoved
+        labelInventario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+    }//GEN-LAST:event_labelInventarioMouseMoved
 
-    private void jLabel12MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseMoved
-        jLabel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-    }//GEN-LAST:event_jLabel12MouseMoved
+    private void labelVentaEntradasMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelVentaEntradasMouseMoved
+        labelVentaEntradas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+    }//GEN-LAST:event_labelVentaEntradasMouseMoved
 
-    private void jLabel12MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseExited
-        jLabel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-    }//GEN-LAST:event_jLabel12MouseExited
+    private void labelVentaEntradasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelVentaEntradasMouseExited
+        labelVentaEntradas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+    }//GEN-LAST:event_labelVentaEntradasMouseExited
 
-    private void jLabel13MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseMoved
-        jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-    }//GEN-LAST:event_jLabel13MouseMoved
+    private void labelManejarEntradasMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelManejarEntradasMouseMoved
+        labelManejarEntradas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+    }//GEN-LAST:event_labelManejarEntradasMouseMoved
 
-    private void jLabel13MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseExited
-        jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-    }//GEN-LAST:event_jLabel13MouseExited
+    private void labelManejarEntradasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelManejarEntradasMouseExited
+        labelManejarEntradas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+    }//GEN-LAST:event_labelManejarEntradasMouseExited
 
-    private void jLabel14MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseMoved
-        jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-    }//GEN-LAST:event_jLabel14MouseMoved
+    private void labelAnnadirEventosMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelAnnadirEventosMouseMoved
+        labelAnnadirEventos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+    }//GEN-LAST:event_labelAnnadirEventosMouseMoved
 
-    private void jLabel14MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseExited
-        jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-    }//GEN-LAST:event_jLabel14MouseExited
+    private void labelAnnadirEventosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelAnnadirEventosMouseExited
+        labelAnnadirEventos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+    }//GEN-LAST:event_labelAnnadirEventosMouseExited
 
-    private void jLabel9MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseMoved
-        jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-    }//GEN-LAST:event_jLabel9MouseMoved
+    private void labelManejarEventosMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelManejarEventosMouseMoved
+        labelManejarEventos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+    }//GEN-LAST:event_labelManejarEventosMouseMoved
 
-    private void jLabel9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseExited
-        jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-    }//GEN-LAST:event_jLabel9MouseExited
+    private void labelManejarEventosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelManejarEventosMouseExited
+        labelManejarEventos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+    }//GEN-LAST:event_labelManejarEventosMouseExited
 
-    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+    private void labelAnnadirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelAnnadirMouseClicked
 
-    }//GEN-LAST:event_jLabel11MouseClicked
+    }//GEN-LAST:event_labelAnnadirMouseClicked
 
     private void jLabel27MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel27MouseEntered
         jLabel27.setToolTipText("Oprimir para volver al menu de Login.");
@@ -528,10 +542,12 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
+        this.logear();
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        rSPanelsSlider1.setPanelSlider(15, pnl3, RSPanelsSlider.DIRECT.LEFT);
+
 
     }//GEN-LAST:event_jButton1MouseClicked
 
@@ -585,6 +601,38 @@ public class Login extends javax.swing.JFrame {
 
     }//GEN-LAST:event_txtPasswordKeyPressed
 
+    private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
+
+        //jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/Enter_ON.png")));
+
+    }//GEN-LAST:event_jButton1MouseEntered
+
+    private void jButton1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseReleased
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/Enter_OFF.png")));
+
+    }//GEN-LAST:event_jButton1MouseReleased
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        this.labelAnnadir.setEnabled(false);
+        this.labelAnnadirEventos.setEnabled(false);
+        this.labelInventario.setEnabled(false);
+        this.labelManejarEntradas.setEnabled(false);
+        this.labelManejarEventos.setEnabled(false);
+        this.labelVentaEntradas.setEnabled(false);
+    }//GEN-LAST:event_formWindowOpened
+
+    private void labelAnnadirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelAnnadirMouseEntered
+        
+        if (this.labelAnnadir.isEnabled() == false) {
+            this.labelAnnadir.setToolTipText("Debe ingresar al sistema primero.");
+        }else{
+            this.labelAnnadir.setToolTipText("Añadir Inventario.");
+        }
+        
+        
+    }//GEN-LAST:event_labelAnnadirMouseEntered
+
     /**
      * @param args the command line arguments
      */
@@ -624,11 +672,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -648,12 +691,17 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JPanel jpIngreso;
+    private javax.swing.JLabel labelAnnadir;
+    private javax.swing.JLabel labelAnnadirEventos;
+    private javax.swing.JLabel labelInventario;
+    private javax.swing.JLabel labelManejarEntradas;
+    private javax.swing.JLabel labelManejarEventos;
+    private javax.swing.JLabel labelVentaEntradas;
     private javax.swing.JPanel pnl1;
     private javax.swing.JPanel pnl2;
     private javax.swing.JPanel pnl3;
@@ -678,16 +726,19 @@ public class Login extends javax.swing.JFrame {
             if (usuarioLogeado != null) {
 
                 if (usuarioLogeado.isSuperAdmi()) {
-                    SuperAdminWindow superAdminWindows = new SuperAdminWindow();
 
-                    superAdminWindows.setLocationRelativeTo(null);
-
-                    superAdminWindows.setVisible(true);
-
-                    this.dispose();
-
+                    rSPanelsSlider1.setPanelSlider(15, pnl2, RSPanelsSlider.DIRECT.LEFT);
+                    this.labelAnnadir.setEnabled(true);
+                    this.labelAnnadirEventos.setEnabled(true);
+                    this.labelInventario.setEnabled(true);
+                    this.labelManejarEntradas.setEnabled(true);
+                    this.labelManejarEventos.setEnabled(true);
+                    this.labelVentaEntradas.setEnabled(true);
                 }
 
+            } else {
+                rSPanelsSlider1.setPanelSlider(15, pnl3, RSPanelsSlider.DIRECT.LEFT);
+                labelAnnadir.setEnabled(false);
             }
 
         } catch (Exception e) {
