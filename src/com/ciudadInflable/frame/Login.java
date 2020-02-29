@@ -6,11 +6,13 @@
 package com.ciudadInflable.frame;
 
 import com.ciudadInflable.fonts.Fuente;
+import com.sistema.entidad.Usuario;
+import com.sistema.logica.UsuarioLog;
+import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import rojerusan.RSPanelsSlider;
-
 
 /**
  *
@@ -32,7 +34,7 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setFont(tipoFuente.fuente(tipoFuente.decker, 0, 18));
         txtUserName.setFont(tipoFuente.fuente(tipoFuente.decker, 0, 18));
         jLabel8.setFont(tipoFuente.fuente(tipoFuente.decker, 1, 18));
-        jLabel23.setFont(tipoFuente.fuente(tipoFuente.decker, 1, 18)); 
+        jLabel23.setFont(tipoFuente.fuente(tipoFuente.decker, 1, 18));
     }
 
     /**
@@ -326,6 +328,11 @@ public class Login extends javax.swing.JFrame {
                 txtUserNameMouseClicked(evt);
             }
         });
+        txtUserName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtUserNameKeyPressed(evt);
+            }
+        });
         pnl1.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 160, 30));
 
         txtPassword.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
@@ -344,6 +351,11 @@ public class Login extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 txtPasswordMouseExited(evt);
+            }
+        });
+        txtPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPasswordKeyPressed(evt);
             }
         });
         pnl1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 170, 30));
@@ -455,51 +467,51 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel21MouseClicked
 
     private void jLabel11MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseMoved
-        jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153,153,153)));
+        jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
     }//GEN-LAST:event_jLabel11MouseMoved
 
     private void jLabel11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseExited
-        jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));
+        jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
     }//GEN-LAST:event_jLabel11MouseExited
 
     private void jLabel15MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseExited
-        jLabel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));
+        jLabel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
     }//GEN-LAST:event_jLabel15MouseExited
 
     private void jLabel15MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseMoved
-        jLabel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153,153,153)));
+        jLabel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
     }//GEN-LAST:event_jLabel15MouseMoved
 
     private void jLabel12MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseMoved
-        jLabel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153,153,153)));
+        jLabel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
     }//GEN-LAST:event_jLabel12MouseMoved
 
     private void jLabel12MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseExited
-        jLabel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));
+        jLabel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
     }//GEN-LAST:event_jLabel12MouseExited
 
     private void jLabel13MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseMoved
-        jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153,153,153)));
+        jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
     }//GEN-LAST:event_jLabel13MouseMoved
 
     private void jLabel13MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseExited
-        jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));
+        jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
     }//GEN-LAST:event_jLabel13MouseExited
 
     private void jLabel14MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseMoved
-        jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153,153,153)));
+        jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
     }//GEN-LAST:event_jLabel14MouseMoved
 
     private void jLabel14MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseExited
-        jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));
+        jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
     }//GEN-LAST:event_jLabel14MouseExited
 
     private void jLabel9MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseMoved
-        jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153,153,153)));
+        jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
     }//GEN-LAST:event_jLabel9MouseMoved
 
     private void jLabel9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseExited
-        jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));
+        jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
     }//GEN-LAST:event_jLabel9MouseExited
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
@@ -552,6 +564,26 @@ public class Login extends javax.swing.JFrame {
     private void jLabel5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseEntered
         jLabel5.setToolTipText("Oprimir para mostrar la contraseña.");
     }//GEN-LAST:event_jLabel5MouseEntered
+
+    private void txtUserNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUserNameKeyPressed
+
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER || evt.getKeyCode() == KeyEvent.VK_ENTER) {
+
+            this.logear();
+
+        }
+
+    }//GEN-LAST:event_txtUserNameKeyPressed
+
+    private void txtPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPasswordKeyPressed
+
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER || evt.getKeyCode() == KeyEvent.VK_ENTER) {
+
+            this.logear();
+
+        }
+
+    }//GEN-LAST:event_txtPasswordKeyPressed
 
     /**
      * @param args the command line arguments
@@ -629,4 +661,41 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
+
+    public void logear() {
+
+        String nombreUsuario = txtUserName.getText();
+
+        String contrasenna = txtPassword.getText();
+
+        Usuario usuarioLogeado = new Usuario();
+
+        try {
+            UsuarioLog usuarioLog = new UsuarioLog();
+
+            usuarioLogeado = usuarioLog.logear(nombreUsuario, contrasenna);
+
+            if (usuarioLogeado != null) {
+
+                if (usuarioLogeado.isSuperAdmi()) {
+                    SuperAdminWindow superAdminWindows = new SuperAdminWindow();
+
+                    superAdminWindows.setLocationRelativeTo(null);
+
+                    superAdminWindows.setVisible(true);
+
+                    this.dispose();
+
+                }
+
+            }
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+        }
+
+    }
+
 }
