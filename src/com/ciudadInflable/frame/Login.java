@@ -25,6 +25,7 @@ public class Login extends javax.swing.JFrame {
      */
     Fuente tipoFuente;
     Timer t;
+    public static Exit exit = new Exit();
 
     public Login() {
         tipoFuente = new Fuente();
@@ -35,6 +36,7 @@ public class Login extends javax.swing.JFrame {
         txtUserName.setFont(tipoFuente.fuente(tipoFuente.decker, 0, 18));
         jLabel8.setFont(tipoFuente.fuente(tipoFuente.decker, 1, 18));
         jLabel23.setFont(tipoFuente.fuente(tipoFuente.decker, 1, 18));
+        
     }
 
     /**
@@ -46,7 +48,7 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        MenuPanel = new javax.swing.JPanel();
         labelManejarEventos = new javax.swing.JLabel();
         labelAnnadir = new javax.swing.JLabel();
         labelVentaEntradas = new javax.swing.JLabel();
@@ -59,7 +61,7 @@ public class Login extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        TopPanel = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jpIngreso = new javax.swing.JPanel();
@@ -96,9 +98,9 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        MenuPanel.setBackground(new java.awt.Color(255, 255, 255));
+        MenuPanel.setForeground(new java.awt.Color(255, 255, 255));
+        MenuPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         labelManejarEventos.setBackground(new java.awt.Color(255, 255, 255));
         labelManejarEventos.setForeground(new java.awt.Color(255, 255, 255));
@@ -110,11 +112,14 @@ public class Login extends javax.swing.JFrame {
             }
         });
         labelManejarEventos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                labelManejarEventosMouseEntered(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 labelManejarEventosMouseExited(evt);
             }
         });
-        jPanel1.add(labelManejarEventos, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 310, 180, 160));
+        MenuPanel.add(labelManejarEventos, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 310, 180, 160));
 
         labelAnnadir.setBackground(new java.awt.Color(255, 255, 255));
         labelAnnadir.setForeground(new java.awt.Color(255, 255, 255));
@@ -136,7 +141,7 @@ public class Login extends javax.swing.JFrame {
                 labelAnnadirMouseExited(evt);
             }
         });
-        jPanel1.add(labelAnnadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 180, 150));
+        MenuPanel.add(labelAnnadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 180, 150));
 
         labelVentaEntradas.setBackground(new java.awt.Color(255, 255, 255));
         labelVentaEntradas.setForeground(new java.awt.Color(255, 255, 255));
@@ -148,11 +153,14 @@ public class Login extends javax.swing.JFrame {
             }
         });
         labelVentaEntradas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                labelVentaEntradasMouseEntered(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 labelVentaEntradasMouseExited(evt);
             }
         });
-        jPanel1.add(labelVentaEntradas, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 60, 180, 160));
+        MenuPanel.add(labelVentaEntradas, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 60, 180, 160));
 
         labelManejarEntradas.setBackground(new java.awt.Color(255, 255, 255));
         labelManejarEntradas.setForeground(new java.awt.Color(255, 255, 255));
@@ -164,11 +172,14 @@ public class Login extends javax.swing.JFrame {
             }
         });
         labelManejarEntradas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                labelManejarEntradasMouseEntered(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 labelManejarEntradasMouseExited(evt);
             }
         });
-        jPanel1.add(labelManejarEntradas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 180, 160));
+        MenuPanel.add(labelManejarEntradas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 180, 160));
 
         labelAnnadirEventos.setBackground(new java.awt.Color(255, 255, 255));
         labelAnnadirEventos.setForeground(new java.awt.Color(255, 255, 255));
@@ -180,11 +191,14 @@ public class Login extends javax.swing.JFrame {
             }
         });
         labelAnnadirEventos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                labelAnnadirEventosMouseEntered(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 labelAnnadirEventosMouseExited(evt);
             }
         });
-        jPanel1.add(labelAnnadirEventos, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 310, 180, 160));
+        MenuPanel.add(labelAnnadirEventos, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 310, 180, 160));
 
         labelInventario.setBackground(new java.awt.Color(255, 255, 255));
         labelInventario.setForeground(new java.awt.Color(255, 255, 255));
@@ -196,53 +210,56 @@ public class Login extends javax.swing.JFrame {
             }
         });
         labelInventario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                labelInventarioMouseEntered(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 labelInventarioMouseExited(evt);
             }
         });
-        jPanel1.add(labelInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 180, 160));
+        MenuPanel.add(labelInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 180, 160));
 
         jLabel10.setBackground(new java.awt.Color(255, 99, 71));
         jLabel10.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 99, 71));
         jLabel10.setText("Manejar Eventos");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 440, -1, 20));
+        MenuPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 440, -1, 20));
 
         jLabel16.setBackground(new java.awt.Color(255, 99, 71));
         jLabel16.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 99, 71));
         jLabel16.setText("Añadir Inventario");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 190, 100, -1));
+        MenuPanel.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 190, 100, -1));
 
         jLabel17.setBackground(new java.awt.Color(255, 99, 71));
         jLabel17.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 99, 71));
         jLabel17.setText("Manejar Inventario");
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, -1, -1));
+        MenuPanel.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, -1, -1));
 
         jLabel18.setBackground(new java.awt.Color(255, 99, 71));
         jLabel18.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 99, 71));
         jLabel18.setText("Venta Entradas");
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 190, -1, 20));
+        MenuPanel.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 190, -1, 20));
 
         jLabel19.setBackground(new java.awt.Color(255, 99, 71));
         jLabel19.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 99, 71));
         jLabel19.setText("Manejar Entradas");
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, -1, 20));
+        MenuPanel.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, -1, 20));
 
         jLabel20.setBackground(new java.awt.Color(255, 99, 71));
         jLabel20.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 99, 71));
         jLabel20.setText("Añadir Eventos");
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 440, -1, 20));
+        MenuPanel.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 440, -1, 20));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 760, 530));
+        getContentPane().add(MenuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 760, 530));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        TopPanel.setBackground(new java.awt.Color(255, 255, 255));
+        TopPanel.setForeground(new java.awt.Color(255, 255, 255));
+        TopPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/icons8-close-window-32.png"))); // NOI18N
         jLabel21.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -251,7 +268,7 @@ public class Login extends javax.swing.JFrame {
                 jLabel21MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 0, -1, 40));
+        TopPanel.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 0, -1, 40));
 
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/icons8-minimize-window-32.png"))); // NOI18N
         jLabel22.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -260,9 +277,9 @@ public class Login extends javax.swing.JFrame {
                 jLabel22MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, -1, 40));
+        TopPanel.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, -1, 40));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 760, 50));
+        getContentPane().add(TopPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 760, 50));
 
         jpIngreso.setBackground(new java.awt.Color(255, 255, 255));
         jpIngreso.setForeground(new java.awt.Color(255, 255, 255));
@@ -470,14 +487,8 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel22MouseClicked
 
     private void jLabel21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel21MouseClicked
-        JFrame frame = new JFrame();
-        String[] options = new String[2];
-        options[0] = "Si";
-        options[1] = "No";
-        int result = JOptionPane.showOptionDialog(frame.getContentPane(), "Enserio desea salir de la aplicación?", "Salir", 0, JOptionPane.QUESTION_MESSAGE, null, options, null);
-        if (result == 0) {
-            System.exit(0);
-        }
+        this.exit.setVisible(true);
+
     }//GEN-LAST:event_jLabel21MouseClicked
 
     private void labelAnnadirMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelAnnadirMouseMoved
@@ -623,15 +634,53 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void labelAnnadirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelAnnadirMouseEntered
-        
+
         if (this.labelAnnadir.isEnabled() == false) {
             this.labelAnnadir.setToolTipText("Debe ingresar al sistema primero.");
-        }else{
+        } else {
             this.labelAnnadir.setToolTipText("Añadir Inventario.");
         }
-        
-        
     }//GEN-LAST:event_labelAnnadirMouseEntered
+
+    private void labelInventarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelInventarioMouseEntered
+        if (this.labelInventario.isEnabled() == false) {
+            this.labelInventario.setToolTipText("Debe ingresar al sistema primero.");
+        } else {
+            this.labelInventario.setToolTipText("Manejar Inventario.");
+        }
+    }//GEN-LAST:event_labelInventarioMouseEntered
+
+    private void labelVentaEntradasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelVentaEntradasMouseEntered
+        if (this.labelVentaEntradas.isEnabled() == false) {
+            this.labelVentaEntradas.setToolTipText("Debe ingresar al sistema primero.");
+        } else {
+            this.labelVentaEntradas.setToolTipText("Vender Entradas.");
+        }
+    }//GEN-LAST:event_labelVentaEntradasMouseEntered
+
+    private void labelManejarEntradasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelManejarEntradasMouseEntered
+        if (this.labelManejarEntradas.isEnabled() == false) {
+            this.labelManejarEntradas.setToolTipText("Debe ingresar al sistema primero.");
+        } else {
+            this.labelManejarEntradas.setToolTipText("Manejar las entradas.");
+        }
+    }//GEN-LAST:event_labelManejarEntradasMouseEntered
+
+    private void labelAnnadirEventosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelAnnadirEventosMouseEntered
+        if (this.labelAnnadirEventos.isEnabled() == false) {
+            this.labelAnnadirEventos.setToolTipText("Debe ingresar al sistema primero.");
+        } else {
+            this.labelAnnadirEventos.setToolTipText("Añadir Eventos.");
+        }
+    }//GEN-LAST:event_labelAnnadirEventosMouseEntered
+
+    private void labelManejarEventosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelManejarEventosMouseEntered
+        if (this.labelManejarEventos.isEnabled() == false) {
+            this.labelManejarEventos.setToolTipText("Debe ingresar al sistema primero.");
+        } else {
+            this.labelManejarEventos.setToolTipText("Añadir Eventos.");
+        }
+    }//GEN-LAST:event_labelManejarEventosMouseEntered
 
     /**
      * @param args the command line arguments
@@ -669,6 +718,8 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel MenuPanel;
+    private javax.swing.JPanel TopPanel;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -691,8 +742,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JPanel jpIngreso;
