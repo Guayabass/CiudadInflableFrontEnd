@@ -1,0 +1,1 @@
+com.ciudadInflable.animaciones.ImageResizeTask

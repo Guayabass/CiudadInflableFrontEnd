@@ -9,16 +9,16 @@ import com.ciudadInflable.fonts.Fuente;
 import com.sistema.entidad.Usuario;
 import com.sistema.logica.UsuarioLog;
 import java.awt.event.KeyEvent;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JLabel;
 import javax.swing.Timer;
-import rojerusan.RSPanelsSlider;
 
 /**
  *
  * @author Alejandro
  */
-public class Login extends javax.swing.JFrame {
+public class Login extends javax.swing.JFrame { //hacer un mouseentered en cualquier lado para que se active el cambio 
 
     /**
      * Creates new form Login
@@ -26,8 +26,43 @@ public class Login extends javax.swing.JFrame {
     Fuente tipoFuente;
     Timer t;
     public static Exit exit = new Exit();
+    //private Thread t1 = new Thread(new Thread1 ());
+    Thread t1 = new Thread(new Runnable() {
+        @Override
+        public void run() {
+            int exit = 0;
+            while (exit == 0) {
+                try {
+                    t1.sleep(1000);
+                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/loginsuccessfinal.gif")));
+                    t2.start();
+                    exit++;
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Thread.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    });
+    private Thread t2 = new Thread(new Runnable() {
+        int exit = 0;
+
+        @Override
+        public void run() {
+            try {
+                t2.sleep(1000);
+                jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/loginsuccessinitial.png")));
+                t2.sleep(5000);
+                jPanelSlider1.nextPanel(20, pnl4, jPanelSlider1.right);
+                exit++;
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Thread.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    });
 
     public Login() {
+        UsuarioLog usuarioLog = new UsuarioLog();
+        usuarioLog.logear("123", "123");
         tipoFuente = new Fuente();
         initComponents();
         this.setLocationRelativeTo(null); //hace que cuando se ejecuta el programa salga en el centro
@@ -36,7 +71,7 @@ public class Login extends javax.swing.JFrame {
         txtUserName.setFont(tipoFuente.fuente(tipoFuente.decker, 0, 18));
         jLabel8.setFont(tipoFuente.fuente(tipoFuente.decker, 1, 18));
         jLabel23.setFont(tipoFuente.fuente(tipoFuente.decker, 1, 18));
-        
+
     }
 
     /**
@@ -65,7 +100,7 @@ public class Login extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jpIngreso = new javax.swing.JPanel();
-        rSPanelsSlider1 = new rojerusan.RSPanelsSlider();
+        jPanelSlider1 = new diu.swe.habib.JPanelSlider.JPanelSlider();
         pnl1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -87,6 +122,9 @@ public class Login extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
+        pnl4 = new javax.swing.JPanel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -240,8 +278,8 @@ public class Login extends javax.swing.JFrame {
         jLabel18.setBackground(new java.awt.Color(255, 99, 71));
         jLabel18.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 99, 71));
-        jLabel18.setText("Venta Entradas");
-        MenuPanel.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 190, -1, 20));
+        jLabel18.setText("Ventas de Productos");
+        MenuPanel.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(549, 190, 140, 20));
 
         jLabel19.setBackground(new java.awt.Color(255, 99, 71));
         jLabel19.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
@@ -285,8 +323,6 @@ public class Login extends javax.swing.JFrame {
         jpIngreso.setForeground(new java.awt.Color(255, 255, 255));
         jpIngreso.setPreferredSize(new java.awt.Dimension(290, 580));
         jpIngreso.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        rSPanelsSlider1.setBackground(new java.awt.Color(255, 255, 255));
 
         pnl1.setBackground(new java.awt.Color(255, 255, 255));
         pnl1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 2));
@@ -412,7 +448,7 @@ public class Login extends javax.swing.JFrame {
         });
         pnl1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, 120, 40));
 
-        rSPanelsSlider1.add(pnl1, "card2");
+        jPanelSlider1.add(pnl1, "card2");
 
         pnl2.setBackground(new java.awt.Color(255, 255, 255));
         pnl2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 2));
@@ -421,8 +457,8 @@ public class Login extends javax.swing.JFrame {
         pnl2.setPreferredSize(new java.awt.Dimension(290, 580));
         pnl2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/happy-monkey.gif"))); // NOI18N
-        pnl2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 270, 300));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/loginsuccessinitial.png"))); // NOI18N
+        pnl2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 520, 320));
 
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -436,7 +472,7 @@ public class Login extends javax.swing.JFrame {
         jLabel23.setText("Login exitoso, bienvenido al");
         pnl2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 270, 50));
 
-        rSPanelsSlider1.add(pnl2, "card2");
+        jPanelSlider1.add(pnl2, "card2");
 
         pnl3.setBackground(new java.awt.Color(255, 255, 255));
         pnl3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 2));
@@ -445,8 +481,8 @@ public class Login extends javax.swing.JFrame {
         pnl3.setPreferredSize(new java.awt.Dimension(290, 580));
         pnl3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/sad-monkey.gif"))); // NOI18N
-        pnl3.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 270, 300));
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/error-login.png"))); // NOI18N
+        pnl3.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 100, 150));
 
         jLabel25.setBackground(new java.awt.Color(255, 255, 255));
         jLabel25.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -471,11 +507,35 @@ public class Login extends javax.swing.JFrame {
                 jLabel27MouseEntered(evt);
             }
         });
-        pnl3.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 110, 90));
+        pnl3.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 150, 110));
 
-        rSPanelsSlider1.add(pnl3, "card2");
+        jPanelSlider1.add(pnl3, "card2");
 
-        jpIngreso.add(rSPanelsSlider1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 580));
+        pnl4.setBackground(new java.awt.Color(255, 255, 255));
+        pnl4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 2));
+        pnl4.setMinimumSize(new java.awt.Dimension(290, 580));
+        pnl4.setName("pnl3"); // NOI18N
+        pnl4.setPreferredSize(new java.awt.Dimension(290, 580));
+        pnl4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/logout.png"))); // NOI18N
+        jLabel28.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel28.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel28MouseClicked(evt);
+            }
+        });
+        pnl4.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 250, 300));
+
+        jLabel30.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel30.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(238, 112, 82));
+        jLabel30.setText("Cerrar sesión");
+        pnl4.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 130, 50));
+
+        jPanelSlider1.add(pnl4, "card2");
+
+        jpIngreso.add(jPanelSlider1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 580));
 
         getContentPane().add(jpIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 580));
 
@@ -548,7 +608,8 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel27MouseEntered
 
     private void jLabel27MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel27MouseClicked
-        rSPanelsSlider1.setPanelSlider(15, pnl1, RSPanelsSlider.DIRECT.RIGHT);
+        //rSPanelsSlider1.setPanelSlider(15, pnl1, RSPanelsSlider.DIRECT.RIGHT);
+        jPanelSlider1.nextPanel(20, pnl1, jPanelSlider1.right);
     }//GEN-LAST:event_jLabel27MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -567,6 +628,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPasswordMouseExited
 
     private void txtPasswordMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPasswordMouseEntered
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ciudadInflable/image/seenoevil.gif")));
     }//GEN-LAST:event_txtPasswordMouseEntered
 
@@ -682,6 +744,18 @@ public class Login extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_labelManejarEventosMouseEntered
 
+    private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked
+        // dopeppee
+        jPanelSlider1.nextPanel(20, pnl1, jPanelSlider1.right);
+        this.labelAnnadir.setEnabled(false);
+        this.labelAnnadirEventos.setEnabled(false);
+        this.labelInventario.setEnabled(false);
+        this.labelManejarEntradas.setEnabled(false);
+        this.labelManejarEventos.setEnabled(false);
+        this.labelVentaEntradas.setEnabled(false);
+
+    }//GEN-LAST:event_jLabel28MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -717,6 +791,87 @@ public class Login extends javax.swing.JFrame {
         });
     }
 
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public JLabel getjLabel16() {
+        return jLabel16;
+    }
+
+    public JLabel getjLabel17() {
+        return jLabel17;
+    }
+
+    public JLabel getjLabel18() {
+        return jLabel18;
+    }
+
+    public JLabel getjLabel19() {
+        return jLabel19;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public JLabel getjLabel20() {
+        return jLabel20;
+    }
+
+    public JLabel getjLabel21() {
+        return jLabel21;
+    }
+
+    public JLabel getjLabel22() {
+        return jLabel22;
+    }
+
+    public JLabel getjLabel23() {
+        return jLabel23;
+    }
+
+    public JLabel getjLabel24() {
+        return jLabel24;
+    }
+
+    public JLabel getjLabel25() {
+        return jLabel25;
+    }
+
+    public JLabel getjLabel26() {
+        return jLabel26;
+    }
+
+    public JLabel getjLabel27() {
+        return jLabel27;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MenuPanel;
     private javax.swing.JPanel TopPanel;
@@ -736,12 +891,15 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private diu.swe.habib.JPanelSlider.JPanelSlider jPanelSlider1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JPanel jpIngreso;
@@ -754,7 +912,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel pnl1;
     private javax.swing.JPanel pnl2;
     private javax.swing.JPanel pnl3;
-    private rojerusan.RSPanelsSlider rSPanelsSlider1;
+    private javax.swing.JPanel pnl4;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
@@ -776,17 +934,20 @@ public class Login extends javax.swing.JFrame {
 
                 if (usuarioLogeado.isSuperAdmi()) {
 
-                    rSPanelsSlider1.setPanelSlider(15, pnl2, RSPanelsSlider.DIRECT.LEFT);
+                    // rSPanelsSlider1.setPanelSlider(15, pnl2, RSPanelsSlider.DIRECT.LEFT);
+                    jPanelSlider1.nextPanel(20, pnl2, jPanelSlider1.left);
                     this.labelAnnadir.setEnabled(true);
                     this.labelAnnadirEventos.setEnabled(true);
                     this.labelInventario.setEnabled(true);
                     this.labelManejarEntradas.setEnabled(true);
                     this.labelManejarEventos.setEnabled(true);
                     this.labelVentaEntradas.setEnabled(true);
+                    t1.start();
                 }
 
             } else {
-                rSPanelsSlider1.setPanelSlider(15, pnl3, RSPanelsSlider.DIRECT.LEFT);
+                //rSPanelsSlider1.setPanelSlider(15, pnl3, RSPanelsSlider.DIRECT.LEFT);
+                jPanelSlider1.nextPanel(20, pnl3, jPanelSlider1.left);
                 labelAnnadir.setEnabled(false);
             }
 
